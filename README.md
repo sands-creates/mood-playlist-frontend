@@ -38,3 +38,17 @@ src/
   App.js
   App.css
   index.js
+
+npm install
+npm start
+
+
+4. Scroll down and click **“Commit changes”**.
+
+---
+
+Once you finish the backend steps and/or the README edit, send me a screenshot or just say:
+
+> “Backend pushed”  
+
+and I’ll give you a matching README for the backend and help you with next polish (screenshots, description for your resume, etc.).
