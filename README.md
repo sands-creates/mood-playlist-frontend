@@ -1,29 +1,56 @@
-R# Mood Playlist – Frontend
+# MoodMix – Frontend 🎧
 
-React frontend for a mood-based playlist generator.  
-Type how you feel, and the app shows tracks that match that mood.
+React frontend for a **mood-based playlist generator**.  
+Type how you feel, and MoodMix shows tracks that match your mood.
+
+This repo contains the **client-side app**.  
+The backend API (Node/Express) lives in a separate repository.
+
+---
+
+## 🌐 Overview
+
+The user:
+
+1. Types in a mood (for example: `calm`, `angry`, `study`, `hopeful`).
+2. Clicks the button to generate a playlist.
+3. The frontend calls a custom backend API.
+4. The backend returns matching tracks.
+5. MoodMix displays the results as responsive “cards” with:
+   - song title  
+   - artist  
+   - album cover  
+   - link to play the track
+
+The app also saves past moods / playlists so the user can quickly re-run them.
 
 ---
 
 ## 🧱 Tech Stack
 
+**Frontend**
+
 - React (functional components + hooks)
-- Fetch API for calling the backend
-- LocalStorage for saving recent moods
-- Custom CSS for card-style UI and responsive layout
+- Fetch API for HTTP requests
+- LocalStorage for saving recent moods / playlists
+- Plain CSS for styling (no UI framework)
+- Responsive layout with card-style design
 
 ---
 
 ## ✨ Features
 
-- Mood input box with quick-select mood buttons
-- Loading and error states (no blank screens)
-- Grid of track cards with:
-  - song title
-  - artist
-  - album cover
-  - link to play the track on the music service
-- “Saved moods / playlists” section powered by LocalStorage
+- **Mood input form** – user types how they feel
+- **Preset mood buttons** – quick options like “Chill”, “Focus”, etc.
+- **Loading & error states** – shows clear feedback instead of blank screens
+- **Track grid** – responsive layout of cards with:
+  - album cover image  
+  - track name  
+  - artist name  
+  - external link to listen
+- **Saved playlists / history**
+  - Uses `localStorage` to remember previous moods
+  - User can quickly re-run a past mood without typing again
 
 ---
 
@@ -32,23 +59,10 @@ Type how you feel, and the app shows tracks that match that mood.
 ```text
 src/
   api/
-    playlist.js        # calls the backend API
+    playlist.js        // functions to call the backend playlist endpoint
   utils/
-    savedPlaylists.js  # handles saving / loading playlists
-  App.js
-  App.css
-  index.js
-
-npm install
-npm start
-
-
-4. Scroll down and click **“Commit changes”**.
-
----
-
-Once you finish the backend steps and/or the README edit, send me a screenshot or just say:
-
-> “Backend pushed”  
-
-and I’ll give you a matching README for the backend and help you with next polish (screenshots, description for your resume, etc.).
+    savedPlaylists.js  // helper for saving / loading playlists from localStorage
+  App.js               // main app component & layout
+  App.css              // styling for the app and track cards
+  index.js             // React entry point
+  index.css            // base styles
